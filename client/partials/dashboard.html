@@ -25,8 +25,8 @@
 						<th>Complain</th>
 					</tr>
 				</thead>
-				<tbody ng-init="appointmentCount = 5">
-					<tr ng-show="appointment.date >= currentDate" ng-repeat="appointment in appointments | filter : filter_appointments | orderBy:'date' | limitTo: appointmentCount">
+				<tbody>
+					<tr ng-show="appointment.date >= currentDate" ng-repeat="appointment in appointments | filter : filter_appointments | orderBy:'date'">
 						<td><span ng-bind="appointment.date"></span></td>
 						<td><span ng-bind='appointment.time'></span></td>
 						<td><span ng-bind='appointment.patient'></span></td>
@@ -35,8 +35,8 @@
 					</tr>
 				</tbody>
 			</table>
-			<button ng-show="appointments.length - appointmentCount > 0" ng-click='appointmentCount = appointmentCount + 2' class="btn btn-link">show more appointments ({{appointments.length - appointmentCount}} left)...</button>
-			<button ng-show="appointments.length - appointmentCount > 0" ng-click='appointmentCount = appointmentCount + (appointments.length - appointmentCount)' class="btn btn-link">show all...</button>
+			<!-- <button ng-show="appointments.length - appointmentCount > 0" ng-click='appointmentCount = appointmentCount + 2' class="btn btn-link">show more appointments ({{appointments.length - appointmentCount}} left)...</button>
+			<button ng-show="appointments.length - appointmentCount > 0" ng-click='appointmentCount = appointmentCount + (appointments.length - appointmentCount)' class="btn btn-link">show all...</button> -->
 		</div>
 	</div>
 	<div class="row">
